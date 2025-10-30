@@ -1,5 +1,5 @@
 # typed: strict
-module ConsoleWeb
+module RackMcp
   VERSION = "0.1.0"
 end
 

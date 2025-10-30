@@ -88,7 +88,7 @@ log/
 .env.*.local
 
 # Ignore Gemfile.lock for gems (keep it for applications)
-ruby/console_web/Gemfile.lock
+# Gemfile.lock
 
 # Sorbet
 sorbet/

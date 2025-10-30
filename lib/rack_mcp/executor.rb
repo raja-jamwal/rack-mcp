@@ -1,7 +1,7 @@
 # typed: strict
 require "stringio"
 
-module ConsoleWeb
+module RackMcp
   class Executor
     # Evaluates Ruby code and captures stdout/stderr.
     def self.eval(code)

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |s|
-  s.name        = "console_web"
+  s.name        = "rack_mcp"
   s.version     = "0.1.0"
-  s.summary     = "Simple web console executor (Rack-only)"
-  s.description = "A Rack app that evaluates Ruby code sent via HTTP."
+  s.summary     = "Model Context Protocol (MCP) server for Ruby code execution"
+  s.description = "A Rack-based MCP server that enables AI assistants to execute Ruby code via the Model Context Protocol."
   s.license     = "MIT"
   s.authors     = ["Raja Jamwal"]
   s.email       = ["linux.experi@gmail.com"]
@@ -19,5 +19,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rack-test"
   s.add_development_dependency "rspec", "~> 3.0"
   s.add_development_dependency "rackup"
+  s.add_development_dependency "webrick"
 end
 
