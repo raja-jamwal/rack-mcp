@@ -1,0 +1,101 @@
+# Ruby / Bundler
+*.gem
+*.rbc
+.bundle
+.config
+vendor/bundle/
+lib/bundler/man/
+pkg/
+rdoc/
+spec/reports/
+test/tmp/
+test/version_tmp/
+tmp/
+.ruby-version
+.ruby-gemset
+
+# RSpec
+spec/examples.txt
+coverage/
+.rspec_status
+
+# YARD documentation
+.yardoc
+_yardoc
+doc/
+
+# Bundler binstubs
+bin/*
+!bin/console
+!bin/setup
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+.vim/
+.nvim/
+
+# Logs
+*.log
+log/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Ignore Gemfile.lock for gems (keep it for applications)
+ruby/console_web/Gemfile.lock
+
+# Sorbet
+sorbet/
+
+# Development databases
+*.sqlite3
+*.sqlite3-*
+db/*.sqlite3
+db/*.sqlite3-journal
+
