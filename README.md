@@ -2,6 +2,8 @@
 
 A Ruby gem that implements the Model Context Protocol (MCP) to provide AI assistants with Ruby code execution capabilities. Works with Rails, Sinatra, Hanami, Roda, and any other Rack-based framework. The code is executed in your application's context for debugging and investigation. Think of it giving AI assistant lighting-speed access to ruby console without the need to write script, reload or restart.
 
+<img src="docs/assets/screen.gif" alt="rails console mcp in cursor" width="400"/>
+
 ## Installation
 
 Add this line to your application's Gemfile:
