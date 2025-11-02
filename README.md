@@ -1,8 +1,16 @@
-# RackMcp MCP Server
+# rack-mcp
 
-A Ruby gem that implements the Model Context Protocol (MCP) to provide AI assistants with Ruby code execution capabilities. Works with Rails, Sinatra, Hanami, Roda, and any other Rack-based framework. The code is executed in your application's context for debugging and investigation. Think of it giving AI assistant lighting-speed access to ruby console without the need to write script, reload or restart.
+A Ruby gem that provides AI assistants with ruby code execution capabilities within the context of existing running application server. Think of it giving AI assistant lighting-speed access to ruby console without the need to write script, reload or restart.
+
+Works with Rails, Sinatra, Hanami, Roda, and any other Rack-based framework. The code is executed in your application's context for debugging and investigation. 
 
 <img src="docs/assets/screen.gif" alt="rails console mcp in cursor" width="400"/>
+
+## Use cases
+
+1. Learn a new codebase or code areas quickly. With your AI client and a running server, you can ask it to research while executing snippets from your actual application code. It effectively acts as an in-loop code-verification block.
+2. Perform quick, preliminary investigations of customer escalations using a read-only copy of the production environment. It can execute your application code, locate models, and run relevant class methods or code paths from the codebase to do preliminary root-cause analysis (RCA). Even better if your application uses an event-sourcing framework (i.e., change logs). The AI client, together with the code-execution capabilities via rack-mcp, can deliver fast preliminary RCAs.
+3. Use it for quick data analytics and export reports as CSV.
 
 ## Installation
 
