@@ -1,6 +1,5 @@
 #!/bin/bash
 # MCP Server Test Script
-# This script demonstrates how to interact with the MCP endpoints
 
 BASE_URL="http://localhost:9292/mcp"
 
