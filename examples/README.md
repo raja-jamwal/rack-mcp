@@ -1,6 +1,6 @@
-# ConsoleWeb MCP Examples
+# RackMcp tests
 
-This directory contains examples for using the ConsoleWeb MCP server.
+Quick end-to-end verification test.
 
 ## Quick Start
 
@@ -61,7 +61,7 @@ curl -X POST http://localhost:9292/mcp/rpc \
 
 The MCP server supports direct JSON-RPC requests and responses:
 
-1. Start your ConsoleWeb server:
+1. Start your RackMcp server:
 ```bash
 bundle exec rackup -p 9292
 ```
