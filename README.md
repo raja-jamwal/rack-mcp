@@ -66,6 +66,22 @@ bundle exec rackup -p 9292
 bundle exec rails server
 ```
 
+### Token Authentication
+
+The MCP server requires token-based authentication for all requests. Set the `RACK_MCP_TOKEN` environment variable before starting your server:
+
+```bash
+# Set the token
+export RACK_MCP_TOKEN="your-secret-token"
+
+# Then start your server
+bundle exec rackup -p 9292
+```
+
+**Important:** The server will reject all requests without a valid token. Make sure to:
+1. Set `RACK_MCP_TOKEN` in your environment before starting the server
+2. Include the token as a query parameter (`?token=your-secret-token`) in all MCP client requests
+
 ## MCP Protocol
 
 ### Endpoint
@@ -85,7 +101,7 @@ The MCP server exposes a single JSON-RPC endpoint:
 
 ### Cursor/ Claude Desktop
 
-Add to your MCP client (cusor, claude etc).
+Add to your MCP client configuration (`.cursor/mcp.json` for Cursor or `claude_desktop_config.json` for Claude Desktop):
 
 ```json
 {
@@ -94,18 +110,32 @@ Add to your MCP client (cusor, claude etc).
       "command": "npx",
       "args": [
         "mcp-remote",
-        "http://localhost:3001/mcp/rpc"
+        "http://localhost:3001/mcp/rpc?token=your-secret-token"
       ]
     }
   }
 }
 ```
 
+**Note:** Replace `your-secret-token` with the same token you set in the `RACK_MCP_TOKEN` environment variable on your server. The token must be included as a query parameter in the URL.
+
 ![MCP integration in Cursor](docs/assets/mcp-in-cursor.png)
 
 ### Other MCP Clients
 
-Any MCP-compatible client can connect to the server by making JSON-RPC requests to the `/mcp/rpc` endpoint.
+Any MCP-compatible client can connect to the server by making JSON-RPC requests to the `/mcp/rpc?token=your-secret-token` endpoint.
+
+Example with curl:
+
+```bash
+curl -X POST "http://localhost:3001/mcp/rpc?token=your-secret-token" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "tools/list"
+  }'
+```
 
 ## Testing
 
@@ -120,11 +150,14 @@ bundle exec rspec
 ⚠️ **This gem executes arbitrary Ruby code.** 
 
 **Important security considerations:**
-- Only use in development environments
-- Never expose this endpoint to the public internet without authentication
-- Implement proper authentication and authorization in production
+- **Token Authentication Required:** The server requires a token for all requests. Set `RACK_MCP_TOKEN` environment variable and include it in all client requests
+- Only use in development environments or secure, isolated production environments
+- Use a strong, randomly-generated token (e.g., `openssl rand -hex 32`)
+- Never commit tokens to version control
+- Rotate tokens regularly
 - Consider running in a sandboxed or containerized environment
-- Use network-level restrictions to limit access
+- Use network-level restrictions (firewall, VPC) to limit access
+- Monitor and log all code execution requests
 
 ## Concurrency Note
 
