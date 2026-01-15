@@ -6,11 +6,9 @@ Works with Rails, Sinatra, Hanami, Roda, and any other Rack-based framework. The
 
 <img src="docs/assets/screen.gif" alt="rails console mcp in cursor" width="400"/>
 
-## Used by
+## Used at
 
-<a href="https://www.apollo.io/"><img src="docs/assets/apollo-logo.jpg" alt="Apollo.io" height="50"/></a>
-
-Companies using rack-mcp.
+<a href="https://www.apollo.io/"><img src="docs/assets/apollo-logo.jpg" alt="Apollo.io" width="100"/></a>
 
 ## Use cases
 
