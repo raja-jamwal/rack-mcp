@@ -6,6 +6,12 @@ Works with Rails, Sinatra, Hanami, Roda, and any other Rack-based framework. The
 
 <img src="docs/assets/screen.gif" alt="rails console mcp in cursor" width="400"/>
 
+## Used by
+
+<a href="https://www.apollo.io/"><img src="docs/assets/apollo-logo.jpg" alt="Apollo.io" height="50"/></a>
+
+Companies using rack-mcp.
+
 ## Use cases
 
 1. Learn a new codebase or code areas quickly. With your AI client and a running server, you can ask it to research while executing snippets from your actual application code. It effectively acts as an in-loop code-verification block.
