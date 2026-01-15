@@ -71,7 +71,7 @@ bundle exec rails server
 The MCP server requires token-based authentication for all requests. Set the `RACK_MCP_TOKEN` environment variable before starting your server:
 
 ```bash
-# Set the token
+# Set the token (minimum 8 characters required)
 export RACK_MCP_TOKEN="your-secret-token"
 
 # Then start your server
@@ -80,7 +80,8 @@ bundle exec rackup -p 9292
 
 **Important:** The server will reject all requests without a valid token. Make sure to:
 1. Set `RACK_MCP_TOKEN` in your environment before starting the server
-2. Include the token as a query parameter (`?token=your-secret-token`) in all MCP client requests
+2. The token must be at least 8 characters long
+3. Include the token as a query parameter (`?token=your-secret-token`) in all MCP client requests
 
 ## MCP Protocol
 
@@ -150,9 +151,9 @@ bundle exec rspec
 ⚠️ **This gem executes arbitrary Ruby code.** 
 
 **Important security considerations:**
-- **Token Authentication Required:** The server requires a token for all requests. Set `RACK_MCP_TOKEN` environment variable and include it in all client requests
+- **Token Authentication Required:** The server requires a token for all requests. Set `RACK_MCP_TOKEN` environment variable (minimum 8 characters) and include it in all client requests
 - Only use in development environments or secure, isolated production environments
-- Use a strong, randomly-generated token (e.g., `openssl rand -hex 32`)
+- Use a strong, randomly-generated token of at least 8 characters (recommended: `openssl rand -hex 32`)
 - Never commit tokens to version control
 - Rotate tokens regularly
 - Consider running in a sandboxed or containerized environment

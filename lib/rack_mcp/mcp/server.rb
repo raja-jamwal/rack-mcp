@@ -53,6 +53,9 @@ module RackMcp
         # If no token is configured in ENV, consider it unauthorized
         return false if expected_token.nil? || expected_token.empty?
         
+        # Token must be at least 8 characters long
+        return false if expected_token.length < 8
+        
         # Check if the token query parameter matches the expected token
         provided_token = req.params["token"]
         provided_token == expected_token
