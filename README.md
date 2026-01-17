@@ -6,6 +6,8 @@ Works with Rails, Sinatra, Hanami, Roda, and any other Rack-based framework. The
 
 <img src="docs/assets/screen.gif" alt="rails console mcp in cursor" width="400"/>
 
+<a href="https://youtu.be/lhhOGq6l42s?si=gE4jfwow2aqAtvvk">YouTube Link</a>
+
 ## Used at
 
 <a href="https://www.apollo.io/"><img src="docs/assets/apollo-logo.jpg" alt="Apollo.io" width="100"/></a>
