@@ -122,6 +122,11 @@ Add to your MCP client configuration (`.cursor/mcp.json` for Cursor or `claude_d
 }
 ```
 
+## Deeplink for setting up cursor
+You might need to customise
+
+<a href="cursor://anysphere.cursor-deeplink/mcp/install?name=rails-mcp&config=eyJ1cmwiOiJodHRwOi8vbG9jYWxob3N0OjMwMDEvbWNwL3JwYz90b2tlbj1mZGY5ZWY2YmQ0OGUxNTUxIn0%3D">cursor://anysphere.cursor-deeplink/mcp/install?name=rails-mcp&config=eyJ1cmwiOiJodHRwOi8vbG9jYWxob3N0OjMwMDEvbWNwL3JwYz90b2tlbj1mZGY5ZWY2YmQ0OGUxNTUxIn0%3D</a>
+
 **Note:** Replace `your-secret-token` with the same token you set in the `RACK_MCP_TOKEN` environment variable on your server. The token must be included as a query parameter in the URL.
 
 ![MCP integration in Cursor](docs/assets/mcp-in-cursor.png)
